@@ -21,8 +21,8 @@ images[4] = './data/creation_of_adam.jpg';
 titles[4] = 'Michelangelo - Creation of Adam';
 images[5] = './data/profit_i.jpg';
 titles[5] = 'Jean-Michael Basquiat - Profit I';
-images[5] = './data/the_migration_series.jpg';
-titles[5] = 'Jacob Lawrence - The Migration Series';
+images[6] = './data/the_migration_series.jpg';
+titles[6] = 'Jacob Lawrence - The Migration Series';
 
 void setup() {
   size(window.innerWidth, window.innerHeight);
