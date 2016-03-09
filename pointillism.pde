@@ -4,7 +4,7 @@ int smallPoint, largePoint, screenWidth, screenHeight, startTime, currentTime;
 String[] images = new String[6];
 String[] titles = new String[6];
 int i, x, y;
-int maxSize = 128;
+int maxSize = 256;
 float pointillize;
 String artist = "";
 boolean clicked = false;
