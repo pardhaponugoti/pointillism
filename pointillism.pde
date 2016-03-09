@@ -19,8 +19,8 @@ images[3] = './data/sunday_in_the_park.jpg';
 titles[3] = 'Georges Seurat - A Sunday in the Park';
 images[4] = './data/creation_of_adam.jpg';
 titles[4] = 'Michelangelo - Creation of Adam';
-images[5] = './data/mountain_and_waterfall.jpg';
-titles[5] = 'Bob Ross - Mountain and Waterfall';
+images[5] = './data/profit_i.jpg';
+titles[5] = 'Jean-Michael Basquiat - Profit I';
 
 void setup() {
   size(window.innerWidth, window.innerHeight);
