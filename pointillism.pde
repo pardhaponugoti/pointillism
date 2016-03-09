@@ -1,8 +1,8 @@
 PImage img;
 Pimage dupImg;
 int smallPoint, largePoint, screenWidth, screenHeight, startTime, currentTime;
-String[] images = new String[6];
-String[] titles = new String[6];
+String[] images = new String[7];
+String[] titles = new String[7];
 int i, x, y;
 int maxSize = 256;
 float pointillize;
@@ -21,6 +21,8 @@ images[4] = './data/creation_of_adam.jpg';
 titles[4] = 'Michelangelo - Creation of Adam';
 images[5] = './data/profit_i.jpg';
 titles[5] = 'Jean-Michael Basquiat - Profit I';
+images[5] = './data/the_migration_series.jpg';
+titles[5] = 'Jacob Lawrence - The Migration Series';
 
 void setup() {
   size(window.innerWidth, window.innerHeight);
@@ -36,7 +38,7 @@ void setup() {
 
 void draw() {
   if (mousePressed) {
-    i = int(random(6));
+    i = int(random(7));
     largePoint = maxSize;
     img = loadImage(images[i]);
     startTime = new Date();
@@ -49,7 +51,7 @@ void draw() {
   if (clicked === true) {
     currentTime = new Date();
     if (currentTime - startTime > 10000) {
-      if (largePoint > 16) {
+      if (largePoint > 32) {
         console.log(largePoint);
         startTime = currentTime;
         largePoint = largePoint/2;
