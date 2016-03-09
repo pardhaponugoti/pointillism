@@ -19,8 +19,6 @@ titles[3] = 'Georges Seurat - A Sunday in the Park';
 images[4] = './data/creation_of_adam.jpg';
 titles[4] = 'Michelangelo - Creation of Adam';
 
-// possibly have all images loaded at the beginning
-
 void setup() {
   size(window.innerWidth, window.innerHeight);
   smallPoint = 4;
