@@ -1,9 +1,10 @@
 PImage img;
 Pimage dupImg;
 int smallPoint, largePoint, screenWidth, screenHeight, startTime, currentTime;
-String[] images = new String[7];
-String[] titles = new String[7];
+String[] images = new String[6];
+String[] titles = new String[6];
 int i, x, y;
+int maxSize = 128;
 float pointillize;
 String artist = "";
 boolean clicked = false;
@@ -20,13 +21,11 @@ images[4] = './data/creation_of_adam.jpg';
 titles[4] = 'Michelangelo - Creation of Adam';
 images[5] = './data/mountain_and_waterfall.jpg';
 titles[5] = 'Bob Ross - Mountain and Waterfall';
-images[6] = './data/luncheon_of_the_boating_party.jpg';
-titles[6] = 'Renoir - Luncheon of the Boating Party';
 
 void setup() {
   size(window.innerWidth, window.innerHeight);
   smallPoint = 4;
-  largePoint = 256;
+  largePoint = maxSize;
   imageMode(CORNERS);
   noStroke();
   background(0);
@@ -37,8 +36,8 @@ void setup() {
 
 void draw() {
   if (mousePressed) {
-    i = int(random(7));
-    largePoint = 256;
+    i = int(random(6));
+    largePoint = maxSize;
     img = loadImage(images[i]);
     startTime = new Date();
     clicked = true;
@@ -63,7 +62,7 @@ void draw() {
     y = int(random(img.height));
     if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
       color pix = img.get(x, y);
-      fill(pix, 255 * (1 - pointillize/256));
+      fill(pix, 255 * (1 - (pointillize - 1)/maxSize));
       ellipse(x, y, pointillize, pointillize);
     }
     pointillize = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
@@ -71,7 +70,7 @@ void draw() {
     y = int(random(img.height));
     if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
       color pix = img.get(x, y);
-      fill(pix, 255 * (1 - pointillize/256));
+      fill(pix, 255 * (1 - (pointillize - 1)/maxSize));
       ellipse(x, y, pointillize, pointillize);
     }
     pointillize = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
@@ -79,7 +78,7 @@ void draw() {
     y = int(random(img.height));
     if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
       color pix = img.get(x, y);
-      fill(pix, 255 * (1 - pointillize/256));
+      fill(pix, 255 * (1 - (pointillize - 1)/maxSize));
       ellipse(x, y, pointillize, pointillize);
     }
     pointillize = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
@@ -87,7 +86,7 @@ void draw() {
     y = int(random(img.height));
     if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
       color pix = img.get(x, y);
-      fill(pix, 255 * (1 - pointillize/256));
+      fill(pix, 255 * (1 - (pointillize - 1)/maxSize));
       ellipse(x, y, pointillize, pointillize);
     }
   }
