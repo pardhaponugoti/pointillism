@@ -1,1 +1,29 @@
-Hello World
+<html>
+  <head>
+    <title>Pointillism</title>
+    <script src="./javascripts/processing.min.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <canvas style="z-index:1" id="myCanvas" data-processing-sources="pointillism.pde"></canvas>
+    </div>
+    <script type="application/javascript">
+      (function () {
+
+        setInterval(function() {
+          window.scrollTo(10, 10)
+        }, 500)
+        var canvas = document.getElementsByTagName("canvas")[0];
+        var ctx = canvas.getContext("2d");
+
+        window.addEventListener('resize', resizeCanvas, false);
+
+        function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+      })();
+    </script>
+  </body>
+</html>
