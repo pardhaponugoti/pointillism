@@ -1,8 +1,8 @@
 PImage img;
 Pimage dupImg;
 int smallPoint, largePoint, screenWidth, screenHeight, startTime, currentTime;
-String[] images = new String[4];
-String[] titles = new String[4];
+String[] images = new String[6];
+String[] titles = new String[6];
 int i, x, y;
 float pointillize;
 String artist = "";
@@ -18,6 +18,8 @@ images[3] = './data/sunday_in_the_park.jpg';
 titles[3] = 'Georges Seurat - A Sunday in the Park';
 images[4] = './data/creation_of_adam.jpg';
 titles[4] = 'Michelangelo - Creation of Adam';
+images[5] = './data/mountain_and_waterfall.jpg';
+titles[5] = 'Bob Ross - Mountain and Waterfall';
 
 void setup() {
   size(window.innerWidth, window.innerHeight);
@@ -33,7 +35,7 @@ void setup() {
 
 void draw() {
   if (mousePressed) {
-    i = int(random(5));
+    i = int(random(6));
     largePoint = 256;
     img = loadImage(images[i]);
     startTime = new Date();
