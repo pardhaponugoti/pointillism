@@ -51,7 +51,7 @@ void draw() {
   if (clicked === true) {
     currentTime = new Date();
     if (currentTime - startTime > 10000) {
-      if (largePoint > 32) {
+      if (largePoint > 16) {
         console.log(largePoint);
         startTime = currentTime;
         largePoint = largePoint/2;
