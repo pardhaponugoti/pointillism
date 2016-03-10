@@ -1,0 +1,49 @@
+<!-- <div> -->
+  <!-- <button class="audio-ctrl-btn" onclick="document.getElementById('siteAudio').play()">&#9658;</button>
+  <button class="audio-ctrl-btn" onclick="document.getElementById('siteAudio').pause()">&#10074;&#10074;</button>
+  <text class="footer-title">Pardha Ponugoti</text>
+  <a href="https://www.linkedin.com/pub/pardha-ponugoti/1a/a1a/10" target="_blank" style="text-decoration:none;">
+    <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+      <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Pardha Ponugoti's LinkedIn profile" style="vertical-align:middle;" border="0">&nbsp;
+    </span>
+  </a>
+  <a href="https://www.github.com/pardhaponugoti" target="_blank" style="text-decoration:none;">
+    <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+      <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="15" height="15" alt="View Pardha Ponugoti's LinkedIn profile" style="vertical-align:middle;" border="0">&nbsp;
+    </span>
+  </a> -->
+<!-- </div> -->
+
+
+<style type="text/css">
+  body {
+      margin: 0;
+      overflow:hidden;
+      background-color: grey;
+  }
+
+  * {
+    outline: none;
+    font-family: Verdana;
+  }
+
+  div {
+    text-align: right;
+  }
+
+  .footer-title {
+    padding: 0 5px;
+    top: 2px;
+    margin: 5px 0 0 0;
+    font-size: 10px;
+  }
+
+  .audio-ctrl-btn {
+    height: 22px;
+    float: left;
+    padding: 5px;
+    margin: 0 2px;
+    background-color: white;
+  }
+
+</style>

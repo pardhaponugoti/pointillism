@@ -1,24 +1,98 @@
 <html>
   <head>
     <title>pointillism</title>
+    <style type="text/css">
+      * {
+        outline: none;
+        font-family: Verdana;
+        color: grey;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overflow: hidden;
+        background-color: black;
+        padding: 0;
+      }
+
+      div {
+        background-color: black;
+        text-align: right;
+        margin: 0;
+      }
+
+      .footer {
+        height: 20px;
+      }
+      .clearfix {
+        overflow: hidden;
+      }
+
+      .song-title {
+        padding: 0 5px;
+        margin: 3px 0 0 0;
+        float: left;
+        font-size: 12px;
+      }
+
+      .audio-ctrl-btn {
+        height: 20px;
+        float: left;
+        padding: 0 5px;
+        margin: 0 2px;
+        background-color: white;
+        color: black;
+      }
+
+      .footer-title {
+        padding: 0 5px;
+        top: 2px;
+        margin: 5px 0 0 0;
+        font-size: 12px;
+      }
+
+      .github-icon {
+        margin-right: 10px;
+      }
+    </style>
     <script src="./javascripts/processing.min.js"></script>
+    <audio id="siteAudio" autoplay="autoplay" loop>
+      <source src="http://res.cloudinary.com/pardha/video/upload/v1457566559/audio_zvpqr8.mp3" type="audio/mp3">
+    </audio>
   </head>
 
   <body>
     <div>
-      <canvas style="z-index:1" id="myCanvas" data-processing-sources="pointillism.pde"></canvas>
+      <canvas id="myCanvas" data-processing-sources="pointillism.pde"></canvas>
     </div>
+    <div class="footer clearfix">
+      <button class="audio-ctrl-btn" onclick="document.getElementById('siteAudio').play()">&#9658;</button>
+      <button class="audio-ctrl-btn" onclick="document.getElementById('siteAudio').pause()">&#10074;&#10074;</button>
+      <text class="song-title">Ludovico Einaudi - Divenire</text>
+      <text class="footer-title">Pardha Ponugoti</text>
+      <a href="https://www.linkedin.com/pub/pardha-ponugoti/1a/a1a/10" target="_blank" style="text-decoration:none;">
+        <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+          <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Pardha Ponugoti's LinkedIn profile" style="vertical-align:middle;" border="0">&nbsp;
+        </span>
+      </a>
+      <a class="github-icon" href="https://www.github.com/pardhaponugoti" target="_blank" style="text-decoration:none;">
+        <span style="font: 80% Arial,sans-serif; color:#0783B6;">
+          <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="15" height="15" alt="View Pardha Ponugoti's LinkedIn profile" style="vertical-align:middle;" border="0">&nbsp;
+        </span>
+      </a>
+    </div>
+
     <script type="application/javascript">
-      (function () {
+      (function() {
 
         setInterval(function() {
           window.scrollTo(10, 10)
         }, 500)
+
         var canvas = document.getElementsByTagName("canvas")[0];
-        var ctx = canvas.getContext("2d");
 
-        window.addEventListener('resize', resizeCanvas, false);
-
+        window.addEventListener('DOMContentLoaded', resizeCanvas, false);
         function resizeCanvas() {
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;

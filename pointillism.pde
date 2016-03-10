@@ -1,8 +1,8 @@
 PImage img;
 Pimage dupImg;
 int smallPoint, largePoint, screenWidth, screenHeight, startTime, currentTime;
-String[] images = new String[7];
-String[] titles = new String[7];
+String[] images = new String[8];
+String[] titles = new String[8];
 int i, x, y;
 int maxSize = 256;
 float pointillize;
@@ -25,7 +25,7 @@ images[6] = './data/the_migration_series.jpg';
 titles[6] = 'Jacob Lawrence - The Migration Series';
 
 void setup() {
-  size(window.innerWidth, window.innerHeight);
+  size(window.innerWidth, window.innerHeight - 20);
   smallPoint = 4;
   largePoint = maxSize;
   imageMode(CORNERS);
@@ -58,7 +58,7 @@ void draw() {
       }
     }
     img.resize(window.innerWidth, window.innerHeight);
-    image(img, window.innerWidth, 0 , window.innerWidth * 5 / 6 , window.innerHeight / 6);
+    image(img, window.innerWidth, 0 , window.innerWidth * 5 / 6 , (window.innerHeight-20) / 6);
     pointillize = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
