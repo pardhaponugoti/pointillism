@@ -23,6 +23,9 @@
       }
 
       .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
         height: 20px;
       }
       .clearfix {
@@ -43,6 +46,9 @@
         margin: 0 2px;
         background-color: white;
         color: black;
+      }
+      .audio-ctrl-btn:hover {
+        cursor: pointer;
       }
 
       .footer-title {
@@ -95,7 +101,7 @@
         window.addEventListener('DOMContentLoaded', resizeCanvas, false);
         function resizeCanvas() {
           canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
+          canvas.height = window.innerHeight - 20;
         }
       })();
     </script>
