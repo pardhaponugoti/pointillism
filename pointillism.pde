@@ -25,7 +25,7 @@ images[6] = './data/the_migration_series.jpg';
 titles[6] = 'Jacob Lawrence - The Migration Series';
 
 void setup() {
-  size(window.innerWidth, window.innerHeight - 20);
+  size(window.innerWidth, window.innerHeight);
   smallPoint = 4;
   largePoint = maxSize;
   imageMode(CORNERS);
@@ -57,8 +57,8 @@ void draw() {
         largePoint = largePoint/2;
       }
     }
-    img.resize(window.innerWidth, window.innerHeight - 20);
-    image(img, window.innerWidth, 0 , window.innerWidth * 5 / 6 , (window.innerHeight - 20) / 6);
+    img.resize(window.innerWidth, window.innerHeight);
+    image(img, window.innerWidth, 0 , window.innerWidth * 5 / 6 , (window.innerHeight) / 6);
     pointillize = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
