@@ -103,7 +103,7 @@
 
         var canvas = document.getElementsByTagName("canvas")[0];
 
-        window.addEventListener('resize', resizeCanvas, false);
+        window.addEventListener('DOMContentLoaded', resizeCanvas, false);
         function resizeCanvas() {
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;
