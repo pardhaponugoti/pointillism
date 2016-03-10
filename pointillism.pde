@@ -5,7 +5,7 @@ String[] images = new String[8];
 String[] titles = new String[8];
 int i, x, y;
 int maxSize = 256;
-float pointillize;
+float point;
 String artist = "";
 boolean clicked = false;
 
@@ -59,37 +59,37 @@ void draw() {
     }
     img.resize(window.innerWidth, window.innerHeight);
     image(img, window.innerWidth, 0 , window.innerWidth * 5 / 6 , (window.innerHeight) / 6);
-    pointillize = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
+    point = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
     if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
       color pix = img.get(x, y);
-      fill(pix, 255 * (1 - (pointillize - 1)/maxSize));
-      ellipse(x, y, pointillize, pointillize);
+      fill(pix, 255 * (1 - (point - 1)/maxSize));
+      ellipse(x, y, point, point);
     }
-    pointillize = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
+    point = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
     if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
       color pix = img.get(x, y);
-      fill(pix, 255 * (1 - (pointillize - 1)/maxSize));
-      ellipse(x, y, pointillize, pointillize);
+      fill(pix, 255 * (1 - (point - 1)/maxSize));
+      ellipse(x, y, point, point);
     }
-    pointillize = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
+    point = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
     if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
       color pix = img.get(x, y);
-      fill(pix, 255 * (1 - (pointillize - 1)/maxSize));
-      ellipse(x, y, pointillize, pointillize);
+      fill(pix, 255 * (1 - (point - 1)/maxSize));
+      ellipse(x, y, point, point);
     }
-    pointillize = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
+    point = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
     if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
       color pix = img.get(x, y);
-      fill(pix, 255 * (1 - (pointillize - 1)/maxSize));
-      ellipse(x, y, pointillize, pointillize);
+      fill(pix, 255 * (1 - (point - 1)/maxSize));
+      ellipse(x, y, point, point);
     }
   }
 
