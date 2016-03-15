@@ -23,10 +23,13 @@ images[5] = './data/profit_i.jpg';
 titles[5] = 'Jean-Michael Basquiat - Profit I';
 images[6] = './data/the_migration_series.jpg';
 titles[6] = 'Jacob Lawrence - The Migration Series';
+images[7] = './data/butterfly_ship.jpg';
+titles[7] = 'Salvador Dali - Ship with Butterfly Sails';
 
 void setup() {
   size(window.innerWidth, window.innerHeight);
   smallPoint = 4;
+  i = 1;
   largePoint = maxSize;
   imageMode(CORNERS);
   noStroke();
@@ -38,7 +41,12 @@ void setup() {
 
 void draw() {
   if (mousePressed) {
-    i = int(random(7));
+    j = int(random(8));
+    if (i !== j) {
+      i = j;
+    } else {
+      i = (i + 1) % 8;
+    }
     largePoint = maxSize;
     img = loadImage(images[i]);
     startTime = new Date();
@@ -49,48 +57,39 @@ void draw() {
     text(titles[i], window.innerWidth * 2/3, window.innerHeight * 3/4 + 20);
   }
   if (clicked === true) {
-    currentTime = new Date();
-    if (currentTime - startTime > 10000) {
-      if (largePoint > 16) {
-        console.log(largePoint);
+    if (largePoint > 16) {
+      if (new Date() - startTime > 10000) {
         startTime = currentTime;
         largePoint = largePoint/2;
       }
     }
     img.resize(window.innerWidth, window.innerHeight);
     image(img, window.innerWidth, 0 , window.innerWidth * 5 / 6 , (window.innerHeight) / 6);
-    point = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
+    point = map(random(256), 0, 256, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
-    if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
-      color pix = img.get(x, y);
-      fill(pix, 255 * (1 - (point - 1)/maxSize));
-      ellipse(x, y, point, point);
-    }
-    point = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
+    fill(img.get(x, y), 255 * (1 - (point - 1)/maxSize));
+    ellipse(x, y, point, point);
+    point = map(random(256), 0, 256, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
-    if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
-      color pix = img.get(x, y);
-      fill(pix, 255 * (1 - (point - 1)/maxSize));
-      ellipse(x, y, point, point);
-    }
-    point = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
+    fill(img.get(x, y), 255 * (1 - (point - 1)/maxSize));
+    ellipse(x, y, point, point);
+    point = map(random(256), 0, 256, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
-    if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
-      color pix = img.get(x, y);
-      fill(pix, 255 * (1 - (point - 1)/maxSize));
-      ellipse(x, y, point, point);
-    }
-    point = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
+    fill(img.get(x, y), 255 * (1 - (point - 1)/maxSize));
+    ellipse(x, y, point, point);
+    point = map(random(256), 0, 256, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
-    if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
-      color pix = img.get(x, y);
-      fill(pix, 255 * (1 - (point - 1)/maxSize));
-      ellipse(x, y, point, point);
-    }
+    fill(img.get(x, y), 255 * (1 - (point - 1)/maxSize));
+    ellipse(x, y, point, point);
+    point = map(random(256), 0, 256, smallPoint, largePoint);
+    x = int(random(img.width));
+    y = int(random(img.height));
+    fill(img.get(x, y), 255 * (1 - (point - 1)/maxSize));
+    ellipse(x, y, point, point);
   }
 
 }
@@ -98,3 +97,28 @@ void draw() {
 void keyPressed() {
   background(255);
 }
+
+// point = map(random(256), 0, 256, smallPoint, largePoint);
+// x = int(random(img.width));
+// y = int(random(img.height));
+// if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
+//   color pix = img.get(x, y);
+//   fill(pix, 255 * (1 - (point - 1)/maxSize));
+//   ellipse(x, y, point, point);
+// }
+// point = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
+// x = int(random(img.width));
+// y = int(random(img.height));
+// if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
+//   color pix = img.get(x, y);
+//   fill(pix, 255 * (1 - (point - 1)/maxSize));
+//   ellipse(x, y, point, point);
+// }
+// point = map(random(window.innerWidth), 0, window.innerWidth, smallPoint, largePoint);
+// x = int(random(img.width));
+// y = int(random(img.height));
+// if (x < window.innerWidth * 5 / 6 || y > window.innerHeight/6) {
+//   color pix = img.get(x, y);
+//   fill(pix, 255 * (1 - (point - 1)/maxSize));
+//   ellipse(x, y, point, point);
+// }
