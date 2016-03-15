@@ -59,7 +59,7 @@ void draw() {
   if (clicked === true) {
     if (largePoint > 16) {
       if (new Date() - startTime > 10000) {
-        startTime = currentTime;
+        startTime = new Date();
         largePoint = largePoint/2;
       }
     }
