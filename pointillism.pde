@@ -1,5 +1,4 @@
-PImage img;
-Pimage dupImg;
+PImage img, nextImg;
 int smallPoint, largePoint, screenWidth, screenHeight, startTime, currentTime;
 String[] images = new String[8];
 String[] titles = new String[8];
@@ -29,7 +28,8 @@ titles[7] = 'Salvador Dali - Ship with Butterfly Sails';
 void setup() {
   size(window.innerWidth, window.innerHeight);
   smallPoint = 4;
-  i = 1;
+  i = int(random(8));
+  nextImg = loadImage(images[i]);
   largePoint = maxSize;
   imageMode(CORNERS);
   noStroke();
@@ -40,26 +40,22 @@ void setup() {
 }
 
 void mouseReleased() {
-  j = int(random(8));
-  if (i !== j) {
-    i = j;
-  } else {
-    i = (i + 1) % 8;
-  }
-  largePoint = maxSize;
-  img = loadImage(images[i]);
-  startTime = new Date();
-  clicked = true;
   fill(0, 0, 0, 255);
   rect(window.innerWidth * 2/3, window.innerHeight * 3/4 + 8, 250, 15)
   fill(255, 255, 255, 255);
   text(titles[i], window.innerWidth * 2/3, window.innerHeight * 3/4 + 20);
+  i = (i + 5) % 8;
+  largePoint = maxSize;
+  img = nextImg;
+  nextImg = loadImage(images[i]);
+  startTime = new Date();
+  clicked = true;
 }
 
 void draw() {
   if (clicked) {
     if (largePoint > 16) {
-      if (new Date() - startTime > 10000) {
+      if (new Date() - startTime > 7500) {
         startTime = new Date();
         largePoint = largePoint/2;
       }
