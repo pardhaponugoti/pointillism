@@ -40,6 +40,7 @@ void setup() {
 }
 
 void mouseReleased() {
+  nextImg.resize(window.innerWidth, window.innerHeight);
   fill(0, 0, 0, 255);
   rect(window.innerWidth * 2/3, window.innerHeight * 3/4 + 8, 275, 15)
   fill(255, 255, 255, 255);
@@ -59,9 +60,8 @@ void draw() {
         startTime = new Date();
         largePoint = largePoint/2;
       }
+      image(img, window.innerWidth, 0 , window.innerWidth * 5 / 6 , (window.innerHeight) / 6);
     }
-    img.resize(window.innerWidth, window.innerHeight);
-    image(img, window.innerWidth, 0 , window.innerWidth * 5 / 6 , (window.innerHeight) / 6);
     point = map(random(256), 0, 256, smallPoint, largePoint);
     x = int(random(img.width));
     y = int(random(img.height));
