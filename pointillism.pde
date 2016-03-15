@@ -41,7 +41,7 @@ void setup() {
 
 void mouseReleased() {
   fill(0, 0, 0, 255);
-  rect(window.innerWidth * 2/3, window.innerHeight * 3/4 + 8, 250, 15)
+  rect(window.innerWidth * 2/3, window.innerHeight * 3/4 + 8, 275, 15)
   fill(255, 255, 255, 255);
   text(titles[i], window.innerWidth * 2/3, window.innerHeight * 3/4 + 20);
   i = (i + 5) % 8;
