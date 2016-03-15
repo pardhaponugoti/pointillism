@@ -3,7 +3,7 @@ Pimage dupImg;
 int smallPoint, largePoint, screenWidth, screenHeight, startTime, currentTime;
 String[] images = new String[8];
 String[] titles = new String[8];
-int i, x, y;
+int i, j, x, y;
 int maxSize = 256;
 float point;
 String artist = "";
@@ -39,24 +39,25 @@ void setup() {
   text("click to begin | click to change paintings", window.innerWidth*2/3, window.innerHeight*3/4 + 20);
 }
 
-void draw() {
-  if (mousePressed) {
-    j = int(random(8));
-    if (i !== j) {
-      i = j;
-    } else {
-      i = (i + 1) % 8;
-    }
-    largePoint = maxSize;
-    img = loadImage(images[i]);
-    startTime = new Date();
-    clicked = true;
-    fill(0, 0, 0, 255);
-    rect(window.innerWidth * 2/3, window.innerHeight * 3/4 + 8, 250, 15)
-    fill(255, 255, 255, 255);
-    text(titles[i], window.innerWidth * 2/3, window.innerHeight * 3/4 + 20);
+void mouseReleased() {
+  j = int(random(8));
+  if (i !== j) {
+    i = j;
+  } else {
+    i = (i + 1) % 8;
   }
-  if (clicked === true) {
+  largePoint = maxSize;
+  img = loadImage(images[i]);
+  startTime = new Date();
+  clicked = true;
+  fill(0, 0, 0, 255);
+  rect(window.innerWidth * 2/3, window.innerHeight * 3/4 + 8, 250, 15)
+  fill(255, 255, 255, 255);
+  text(titles[i], window.innerWidth * 2/3, window.innerHeight * 3/4 + 20);
+}
+
+void draw() {
+  if (clicked) {
     if (largePoint > 16) {
       if (new Date() - startTime > 10000) {
         startTime = new Date();
@@ -94,9 +95,6 @@ void draw() {
 
 }
 
-void keyPressed() {
-  background(255);
-}
 
 // point = map(random(256), 0, 256, smallPoint, largePoint);
 // x = int(random(img.width));
