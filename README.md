@@ -11,4 +11,6 @@ Enjoy!
 ## How It Works
 
 The program loads an image randomly, and resizes it to the size of the screen.  It chooses
-a random coordinate on the image and gets the pixel color value.  
+a random coordinate on the image and gets the pixel color value.  It then adds a circle to the canvas
+of a random size, and the larger the circle is, the more transparent is.  As time goes on,
+the range of sizes of the points decreases.
