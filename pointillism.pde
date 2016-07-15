@@ -1,7 +1,7 @@
 PImage img, nextImg;
 int smallPoint, largePoint, screenWidth, screenHeight, startTime, currentTime;
-String[] images = new String[8];
-String[] titles = new String[8];
+String[] images = new String[9];
+String[] titles = new String[9];
 int i, j, x, y;
 int maxSize = 256;
 float point;
@@ -24,11 +24,13 @@ images[6] = './data/the_migration_series.jpg';
 titles[6] = 'Jacob Lawrence - The Migration Series';
 images[7] = './data/butterfly_ship.jpg';
 titles[7] = 'Salvador Dali - Ship with Butterfly Sails';
+images[8] = './data/flying_spaghetti_monster.jpg';
+titles[8] = 'Flying Spaghetti Monster';
 
 void setup() {
   size(window.innerWidth, window.innerHeight);
   smallPoint = 4;
-  i = int(random(8));
+  i = int(random(9));
   nextImg = loadImage(images[i]);
   largePoint = maxSize;
   imageMode(CORNERS);
@@ -45,7 +47,7 @@ void mouseReleased() {
   rect(window.innerWidth * 2/3, window.innerHeight * 3/4 + 8, 275, 15)
   fill(255, 255, 255, 255);
   text(titles[i], window.innerWidth * 2/3, window.innerHeight * 3/4 + 20);
-  i = (i + 5) % 8;
+  i = (i + 5) % 9;
   largePoint = maxSize;
   img = nextImg;
   nextImg = loadImage(images[i]);
